@@ -1,0 +1,21 @@
+from sklearn.preprocessing import KBinsDiscretizer
+from libraries.FGES.fges_main import FGES
+import time
+import pandas as pd
+
+
+def fges_runner(data, nodes,  score, knowledge=None, disc=None, n_bins=5, file_name=None):
+    if disc is not None:
+        discretizer = KBinsDiscretizer(n_bins, encode='ordinal', strategy=disc)
+        nodes_list = []
+        for node in nodes:
+            if(node[1]['type'] == 'cont'):
+                nodes_list.append(node[0])
+        data[nodes_list] = discretizer.fit_transform(data[nodes_list])
+    variables = list(range(len(data.to_numpy()[0])))
+#     print("Running FGES on graph with " + str(len(variables)) + " nodes.")
+    start_time = time.time()
+    fges = FGES(variables, nodes, data, knowledge=knowledge, filename=file_name, save_name=file_name, score=score)
+    result = fges.search()
+#     print("--- %s seconds ---" % (time.time() - start_time))
+    return result

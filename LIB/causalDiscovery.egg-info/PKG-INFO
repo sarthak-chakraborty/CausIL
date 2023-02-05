@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: causalDiscovery
+Version: 0.0.1
+Summary: A one-stop Causal Discovery package
+Home-page: https://github.com/ayushchauhan/Mixed-Data-Causal-Discovery
+Author: Adobe
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Mixed-Data-Causal-Discovery
+Handling the mixed data types smartly while learning a bayesian network on it.
+
+
