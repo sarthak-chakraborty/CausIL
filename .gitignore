@@ -1,3 +1,8 @@
 .DS_Store
 fges.log
 __pycache__/
+LIB/libraries/__pycache__/
+LIB/libraries/FGES/__pycache__/
+LIB/python/__pycache__/
+LIB/python/structure_learning/__pycache__/
+LIB/python/structure_learning/score_based/__pycache__/
