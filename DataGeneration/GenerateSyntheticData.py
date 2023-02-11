@@ -180,7 +180,7 @@ def main():
 
     parser.add_argument('-N', '--nodes', type=int, required=True, help='Number of services in service graph')
     parser.add_argument('-L', '--lag', type=int, default=1, help='Lag for workload to affect number of resources [default: 1]')
-    parser.add_argument('--path_exog', default=EXOG_PATH help='Path to exogneous workload')
+    parser.add_argument('--path_exog', default=EXOG_PATH, help='Path to exogneous workload')
     
     args = parser.parse_args()
 
@@ -194,7 +194,6 @@ def main():
     exog_df = df[['timestamp', 'workload']].astype(float).groupby('timestamp').agg(sum).reset_index(drop=True)
     
     regressors = read_regressors()
-    
 
     write_dir = os.path.join(SRC, f'{args.nodes}_services')
 

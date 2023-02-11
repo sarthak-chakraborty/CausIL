@@ -45,5 +45,5 @@ if __name__ == "__main__":
 
 
         G = nx.DiGraph(matrix)
-
+        
         nx.write_gpickle(G, f'../Data/{args.nodes}_services/Graph{i}.gpickle')
