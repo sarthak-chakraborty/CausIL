@@ -63,7 +63,7 @@ To generate the prohibited edge list which will be given as a domain knowledge, 
 
 
 ## Data
-We are sharing the synthetic data, generated based on the above steps. The link to download data can be found at [link](https://www.dropbox.com/s/v39odzhb5livmhg/CameraReady-Data.zip?dl=0)
+We are sharing the synthetic data, generated based on the above steps. The link to download data can be found at this [link](https://www.dropbox.com/s/v39odzhb5livmhg/CameraReady-Data.zip?dl=0).
 
 
 ## Implementation Steps
