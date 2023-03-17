@@ -65,6 +65,24 @@ To generate the prohibited edge list which will be given as a domain knowledge, 
 ## Data
 We are sharing the synthetic data, generated based on the above steps. The link to download data can be found at this [link](https://www.dropbox.com/s/v39odzhb5livmhg/CameraReady-Data.zip?dl=0).
 
+### Data Description
+
+The file contains synthetically generated dataset used in the evaluation of the paper "CausIL: Causal Graph for Instance Level Microservice Data". The number of services the service call graph used to generate the data is 10, 20 and 40, while each has 10 distinct distribution of synthetic data corresponding to the distinct call graph pattern. The data is stored in dictionary of dictionary format as below:
+
+Data = { timstamp : {Metric_Service_agg : <value>, Metric_Service_inst : <list of values where len(list) = # instances of the service at the timstamp>}}
+
+The suffix 'agg' indicates the aggregated (averaged) metric value over all instances, while 'inst' indicates a list of metric values where each element in the list denotes the metric value of the corresponding instance/pod.
+
+Metrics:  
+- R = # instances
+- W = workload
+- C = cpu utilization
+- U = memory utilization
+- E = error
+- L = latency
+
+In addition to the data, we also provide the service call graph from which it was generated (Graph<# services>.gpickle), the ground truth DAG causal graph (DAG.gpickle) and the prohibited edge list computed based on the domain knowledge for each such service call graph instance.
+
 
 ## Implementation Steps
 
