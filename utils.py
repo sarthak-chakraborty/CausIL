@@ -38,8 +38,29 @@ def compute_stats(graph, graph_gt):
 	DE += -len(list(graph.edges())) +  2*len(list(graph.to_undirected().edges()))
 	UDE += len(list(graph.edges())) - len(list(graph.to_undirected().edges()))
 	G = graph.copy()
-
-	# Direct the undirecyed edges
+	
+	# Direct the undirected edges (topological sorting)
+	for edge in list(G.edges):
+	    if (edge[1],edge[0]) in G.edges:
+	        G.remove_edge(edge[0], edge[1])
+	        G.remove_edge(edge[1], edge[0])
+	top_sort = list(nx.topological_sort(G))
+	
+	all_edges = []
+	for edge in list(g.edges):
+	    if edge not in all_edges:
+	        if (edge[1], edge[0]) in g.edges:
+	            index0 = top_sort.index(edge[0])
+	            index1 = top_sort.index(edge[1])
+	            if index0 < index1:
+	                G.add_edge(edge[0], edge[1])
+	            else:
+	                G.add_edge(edge[1], edge[0])
+	            all_edges.append((edge[1], edge[0]))
+	    all_edges.append(edge)
+	
+	'''
+	# Direct the undirected edges (randomly)
 	for edge in list(G.edges):
 	    if (edge[1],edge[0]) in G.edges:
 	        a = random.choice([0,1])
@@ -53,7 +74,8 @@ def compute_stats(graph, graph_gt):
 	                G.remove_edge(edge[1], edge[0])
 	            except:
 	                pass
-
+	'''
+	
 	adj_results = adj_stats(graph_gt.to_undirected(), G)
 	arrow_head_results = arrow_stats(graph_gt, G)
 	overall_results = overall_stats(graph_gt, G)
