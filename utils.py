@@ -47,9 +47,9 @@ def compute_stats(graph, graph_gt):
 	top_sort = list(nx.topological_sort(G))
 	
 	all_edges = []
-	for edge in list(g.edges):
+	for edge in list(graph.edges):
 	    if edge not in all_edges:
-	        if (edge[1], edge[0]) in g.edges:
+	        if (edge[1], edge[0]) in graph.edges:
 	            index0 = top_sort.index(edge[0])
 	            index1 = top_sort.index(edge[1])
 	            if index0 < index1:
