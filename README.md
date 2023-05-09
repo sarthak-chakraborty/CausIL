@@ -4,8 +4,23 @@ This is the official repository corresponding to the paper titled "CausIL: Causa
 
 **Please cite our paper in any published work that uses any of these resources.**
 ```
-Sarthak Chakraborty, Shaddy Garg, Shiv Kumar Saini, Shubham Agarwal, Ayush Chauhan. CausIL: Causal Graph for
-Instance Level Microservice Data. In Proceedings of The Web Conference 2023 (WWW ’23), 2023
+@inproceedings{10.1145/3543507.3583274,
+author = {Chakraborty, Sarthak and Garg, Shaddy and Agarwal, Shubham and Chauhan, Ayush and Saini, Shiv Kumar},
+title = {CausIL: Causal Graph for Instance Level Microservice Data},
+year = {2023},
+isbn = {9781450394161},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3543507.3583274},
+doi = {10.1145/3543507.3583274},
+abstract = {AI-based monitoring has become crucial for cloud-based services due to its scale. A common approach to AI-based monitoring is to detect causal relationships among service components and build a causal graph. Availability of domain information makes cloud systems even better suited for such causal detection approaches. In modern cloud systems, however, auto-scalers dynamically change the number of microservice instances, and a load-balancer manages the load on each instance. This poses a challenge for off-the-shelf causal structure detection techniques as they neither incorporate the system architectural domain information nor provide a way to model distributed compute across varying numbers of service instances. To address this, we develop CausIL, which detects a causal structure among service metrics by considering compute distributed across dynamic instances and incorporating domain knowledge derived from system architecture. Towards the application in cloud systems, CausIL estimates a causal graph using instance-specific variations in performance metrics, modeling multiple instances of a service as independent, conditional on system assumptions. Simulation study shows the efficacy of CausIL over baselines by improving graph estimation accuracy by ∼ 25% as measured by Structural Hamming Distance whereas the real-world dataset demonstrates CausIL’s applicability in deployment settings.},
+booktitle = {Proceedings of the ACM Web Conference 2023},
+pages = {2905–2915},
+numpages = {11},
+keywords = {System Monitoring, Causal Graph, Microservices, Causal Structure Detection},
+location = {Austin, TX, USA},
+series = {WWW '23}
+}
 ```
 
 
